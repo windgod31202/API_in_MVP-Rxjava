@@ -2,6 +2,7 @@ package com.example.mvp_training.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.mvp_training.Model;
 import com.example.mvp_training.R;
+import com.example.mvp_training.SalesOrderActivity;
 import com.example.mvp_training.contract.MainContract;
 import com.example.mvp_training.presenter.MainPresenter;
 
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.IVie
             public void onClick(View view) {
                 Log.e(TAG, "onClick: ");
                 IPresenter.onButtonClick(account.getText().toString(),password.getText().toString());
+                Intent intent = new Intent(MainActivity.this, SalesOrderActivity.class);
+                startActivity(intent);
             }
         });
     }

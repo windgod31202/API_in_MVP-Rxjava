@@ -14,4 +14,11 @@ public interface APIService {
 
     @GET("posts")
     Observable<Response<List<APIResponse>>> observableResponse();
+
+    //使用者假資料
+    @GET("users")
+    Call<List<UserResponse>> usersResponse();
+
+    @GET("users")
+    Observable<Response<List<UserResponse>>> observableUsersResponse();
 }
